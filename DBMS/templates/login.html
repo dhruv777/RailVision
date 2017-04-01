@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'Css/login.css' %}">
+	<script type="text/javascript">
+		//var doesntexist = {{checked}};
+		if({{checked}} == 1)
+			alert('User does not exist on the database! Please sign up.')
+	</script>
+</head>
+
+<body>
+	<div class = "wrapper">
+		<br><br><br><br><br>
+		<h1 id = "check">Welcome to J.A.R.V.I.S. !</h1>
+
+		<form class="form" method='POST' action=''> {% csrf_token %}
+			<input type="text" placeholder="Username" name="un" readonly onfocus = "this.removeAttribute('readonly');">
+			<input type="password" placeholder="Password" name= "pass">
+			<input type = 'submit' value = 'Log in'> 
+		</form>
+		<p id = "signup">(Or sign up <a href = "signup" id="signuplink">here</a>)</p>
+
+	</div>
+
+</body>
+<!--
+	<script src="Scripts/login.js"></script>
+<h1>{{template_title}}</h1>    
+ Template title gets its information from context 
+Context is sent through the view function to the html-->
+<!--<h1>{{user}}</h1>
+<div class="wrapper">
+	<div class="container">
+		<h1 id = "check">Welcome to Sky Rails!</h1>
+
+		<form class="form" method='' action=''>
+			<input type="text" placeholder="Username" id = "un">
+			<input type="password" placeholder="Password" id = "pass">
+			<button type="button" id="login-button" onclick="checkCred()">Login</button> 
+		</form>
+		<p1>(Or sign up <a href = "signup.html" id="signuplink">here</a>)</p>
+	</div>
+
+
+</div>
+-->
+
+</body>
+</html>
